@@ -46,7 +46,7 @@ router.post('/login', mw.checkUsernameExists, async (req,res,next) => {
   const [user] = await helpers.findBy({ username })
 
   if(user && bcrypt.compareSync(password, user.password)) {
-    req.body.session.user = user
+    req.session.user = user
     res.status(200).json({ message: `Welcome ${username}!`})
   } else {
     next({ status: 401, message: `Invalid credentials` })

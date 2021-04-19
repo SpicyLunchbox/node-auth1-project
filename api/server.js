@@ -33,7 +33,7 @@ server.use(session({
   saveUninitialized: false,
   store: new KnexSessionStore({
     knex: require('../data/db-config.js'),
-    tablename: 'sessions',
+    tablename: 'session',
     sidfieldname: 'sid',
     createtable: true,
     clearInterval: 1000 * 60 * 60,
