@@ -2,7 +2,7 @@
 // middleware functions from `auth-middleware.js`. You will need them here!
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
-const helpers = require('../users/users-model')
+const helpers = require('../users/users-model.js')
 
 router.post('/register', (req, res, next) => {
   const { username, password } = req.body
